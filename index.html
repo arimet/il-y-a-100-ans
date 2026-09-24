@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il y a 100 ans aujourd'hui · La une des journaux, jour pour jour</title>
+  <meta name="description" content="Chaque jour, la une du Figaro, du Petit Parisien, du Matin, de L'Humanité et d'autres quotidiens parus il y a exactement 100 ans. Archives de presse Gallica (BnF).">
+  <link rel="canonical" href="https://arimet.github.io/il-y-a-100-ans/">
+  <meta name="theme-color" content="#ffc21a">
+  <meta name="author" content="Anthony Rimet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Il y a 100 ans aujourd'hui">
+  <meta property="og:title" content="Il y a 100 ans aujourd'hui">
+  <meta property="og:description" content="La une de six quotidiens français parus il y a exactement 100 ans, jour pour jour.">
+  <meta property="og:url" content="https://arimet.github.io/il-y-a-100-ans/">
+  <meta property="og:image" content="https://arimet.github.io/il-y-a-100-ans/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Les unes de cinq quotidiens de 1926 en éventail sur fond jaune orangé">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://gallica.bnf.fr">
+  <link rel="preload" href="fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Il y a 100 ans aujourd'hui",
+    "url": "https://arimet.github.io/il-y-a-100-ans/",
+    "description": "La une de six quotidiens français parus il y a exactement 100 ans, jour pour jour, à partir des archives de Gallica (BnF).",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Person", "name": "Anthony Rimet", "url": "https://github.com/arimet" }
+  }
+  </script>
+
+  <style>
+    @font-face { font-family: 'Jost'; src: url(fonts/jost.woff2) format('woff2'); font-weight: 300 900; font-display: swap; }
+
+    :root {
+      --yellow: #ffd23f;
+      --ink: #14120d;
+      --ink-soft: #2e2400;
+      --paper: #fbf7ec;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scrollbar-color: var(--ink) var(--yellow); accent-color: var(--ink); }
+    body {
+      margin: 0; min-height: 100dvh; overflow-x: hidden;
+      background: var(--yellow); color: var(--ink);
+      font: 400 1.0625rem/1.5 Jost, system-ui, sans-serif;
+    }
+
+    /* Background: warm blobs drifting behind the page, plus a light that follows the pointer */
+    body::before {
+      content: ''; position: fixed; inset: -25%; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 22%, #fff36b 0, transparent 38%),
+        radial-gradient(circle at 84% 12%, #ff6a00 0, transparent 36%),
+        radial-gradient(circle at 72% 80%, #ff9500 0, transparent 40%),
+        radial-gradient(circle at 10% 86%, #ff4d1a 0, transparent 34%),
+        radial-gradient(circle at 46% 50%, #ffd000 0, transparent 44%),
+        radial-gradient(circle at 92% 52%, #ff3d6e 0, transparent 26%),
+        #ffc21a;
+      filter: blur(24px) saturate(1.15); will-change: transform;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      25% { transform: translate(12%, -8%) rotate(18deg) scale(1.15); }
+      50% { transform: translate(-10%, 9%) rotate(-14deg) scale(1.05); }
+      75% { transform: translate(8%, 12%) rotate(26deg) scale(1.2); }
+      100% { transform: translate(-6%, -10%) rotate(-8deg) scale(1.1); }
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(520px circle at var(--pointer-x, 50%) var(--pointer-y, 30%), rgb(255 250 220 / .5), transparent 65%);
+    }
+    @media (hover: none) { body::after { opacity: 0; } }
+
+    ::selection { background: var(--ink); color: var(--yellow); }
+    :focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; border-radius: 2px; }
+    a { color: inherit; text-underline-offset: .2em; }
+
+    /* ---------- Header: the date as the headliner ---------- */
+    header { max-width: 1180px; margin: 0 auto; padding: 28px 16px 48px; text-align: center; }
+    @media (min-width: 900px) {
+      header { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 48px; padding-top: 40px; }
+      .date, nav { margin-left: 0; }
+      .day-month { font-size: min(6rem, 6.4vw); }
+    }
+    h1 {
+      margin: 0; font-size: .95rem; font-weight: 600; letter-spacing: .32em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: .9em;
+    }
+    h1::before, h1::after { content: ''; width: 2.5em; height: 2px; background: currentColor; }
+
+    .date { max-width: 760px; margin: 28px auto 0; line-height: .92; }
+    .date .line { display: block; overflow: hidden; }
+    .weekday { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+    .day-month { font-size: clamp(3rem, 11vw, 6rem); font-weight: 850; letter-spacing: -.035em; margin: .08em 0 .06em; text-wrap: balance; }
+    .year { font-size: clamp(2.2rem, 7vw, 4.2rem); font-weight: 300; letter-spacing: .28em; padding-left: .28em; }
+    .date .word, .date .char { display: inline-block; }
+    .date .word { white-space: nowrap; }
+    .date .char { animation: rise .7s var(--ease) both; animation-delay: calc(var(--index) * 22ms); }
+    @keyframes rise { from { transform: translateY(105%); } }
+
+    nav { max-width: 760px; margin: 14px auto 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    #prev { grid-column: 1; justify-self: start; }
+    #today { grid-column: 2; }
+    #next { grid-column: 3; justify-self: end; }
+    #today[hidden] { display: none; }
+
+    /* Text button with an underline that draws in on hover */
+    .link {
+      position: relative; display: inline-flex; align-items: center; gap: .55em; padding: 10px 2px;
+      font: inherit; font-size: .9rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none;
+      background: none; border: 0; color: inherit; cursor: pointer; white-space: nowrap;
+    }
+    .link::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 5px; height: 2px; background: currentColor;
+      transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease);
+    }
+    .link:hover::after, .link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+    .link svg { width: 18px; height: 18px; flex: none; transition: transform .3s var(--ease); }
+    .link.back:hover svg { transform: translateX(-4px); }
+    .link.forward:hover svg { transform: translateX(4px); }
+    .link:active { opacity: .7; }
+
+    /* ---------- The fan: the six front pages spread like a newsstand pile ---------- */
+    .fan { position: relative; height: 470px; margin-top: 36px; }
+    .leaf {
+      --width: 250px; --spread: 0;
+      position: absolute; left: calc(50% - var(--width) / 2); bottom: 0; width: var(--width); aspect-ratio: 3 / 4;
+      padding: 0; border: 0; cursor: zoom-in; background: var(--paper); overflow: hidden;
+      transform-origin: 50% 120%;
+      transform: translateX(calc(var(--spread) * 38px)) rotate(calc(var(--spread) * 7deg));
+      box-shadow: 0 2px 3px rgb(90 71 0 / .2), 0 16px 30px -12px rgb(60 45 0 / .5);
+      transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+      animation: fan-in 1s var(--ease) backwards; animation-delay: calc(200ms + var(--index) * 60ms);
+    }
+    @keyframes fan-in { from { transform: translateY(24px) rotate(0); opacity: 0; } }
+    .fan:hover .leaf { transform: translateX(calc(var(--spread) * 52px)) rotate(calc(var(--spread) * 10deg)); }
+    .fan .leaf:hover, .fan .leaf:focus-visible {
+      transform: translateX(calc(var(--spread) * 52px)) rotate(calc(var(--spread) * 10deg)) translateY(-28px); z-index: 10;
+      box-shadow: 0 4px 6px rgb(90 71 0 / .2), 0 30px 44px -14px rgb(60 45 0 / .6);
+    }
+    .leaf img { width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .8s var(--ease); }
+    .leaf.loaded img { opacity: 1; }
+    .leaf b { position: absolute; inset: 0; display: grid; place-items: center; padding: 12px; font-size: 1.1rem; font-weight: 800; transition: opacity .4s; }
+    .leaf.loaded b { opacity: 0; }
+
+    /* ---------- Scrolling ticker ---------- */
+    .ticker { background: var(--ink); color: var(--yellow); overflow: hidden; margin-bottom: 56px; }
+    .ticker-track { display: flex; width: max-content; animation: scroll 45s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    .ticker span { padding: 14px 0; font-size: .85rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; white-space: nowrap; }
+    .ticker span::after { content: ''; display: inline-block; width: 6px; height: 6px; margin: 0 1.6em; background: currentColor; transform: rotate(45deg) translateY(-2px); }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+
+    /* ---------- Grid: sheets of paper laid on the poster ---------- */
+    main { max-width: 1180px; margin: 0 auto; padding: 0 16px 48px; }
+    #front-pages { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px 32px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) { #front-pages { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; } }
+
+    .card { --tilt: -1.4deg; animation: drop .8s var(--ease) both; animation-delay: calc(var(--index) * 70ms); }
+    .card:nth-child(3n+2) { --tilt: 1deg; }
+    .card:nth-child(3n) { --tilt: -.6deg; }
+    @keyframes drop { from { opacity: 0; transform: translateY(40px) rotate(calc(var(--tilt) * 4)); } }
+
+    .sheet {
+      display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; font: inherit; color: inherit; text-align: left;
+      background: var(--paper); transform: rotate(var(--tilt));
+      box-shadow: 0 2px 3px rgb(90 71 0 / .18), 0 18px 32px -14px rgb(60 45 0 / .45);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    .sheet:hover, .sheet:focus-visible { transform: rotate(0) translateY(-8px) scale(1.02); box-shadow: 0 4px 6px rgb(90 71 0 / .2), 0 34px 50px -18px rgb(60 45 0 / .55); }
+    .frame { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--paper); }
+    .frame img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;
+      opacity: 0; filter: blur(12px); scale: 1.04;
+      transition: opacity .9s var(--ease), filter 1.1s var(--ease), scale 1.1s var(--ease);
+    }
+    .frame.loaded img { opacity: 1; filter: none; scale: 1; }
+
+    /* Gallica is slow (~10 s per image): the sheet "goes to press" while it loads */
+    .placeholder {
+      position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; padding: 16px; text-align: center;
+      transition: opacity .5s;
+    }
+    .placeholder b { font-size: clamp(1.1rem, 2.4vw, 1.7rem); font-weight: 800; letter-spacing: -.01em; line-height: 1.05; }
+    .placeholder i { font-style: normal; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }
+    .placeholder::after {
+      content: ''; justify-self: center; width: 64px; height: 3px; background: var(--ink);
+      animation: ink 1.4s var(--ease) infinite; transform-origin: left;
+    }
+    @keyframes ink { 0% { transform: scaleX(0); } 60% { transform: scaleX(1); } 100% { transform: scaleX(1); opacity: 0; } }
+    .frame.loaded .placeholder { opacity: 0; }
+    .frame.failed .placeholder::after { display: none; }
+
+    .caption {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      background: var(--ink); color: var(--yellow); padding: 10px 14px;
+      font-size: .82rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    }
+    .caption svg { width: 16px; height: 16px; flex: none; }
+
+    #empty, noscript p { text-align: center; font-size: 1.3rem; font-weight: 500; padding: 48px 0; }
+
+    /* ---------- About: static text, also what search engines read ---------- */
+    .about { max-width: 68ch; margin: 24px auto 0; padding: 0 16px 64px; }
+    .about h2 { margin: 0 0 .5em; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; text-wrap: balance; }
+    .about p { margin: 0 0 1em; font-size: 1.1rem; }
+
+    footer {
+      max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; border-top: 2px solid var(--ink);
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: .9rem; color: var(--ink-soft);
+    }
+    footer a { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Viewer ---------- */
+    dialog {
+      width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+      background: var(--ink); color: var(--yellow); overflow: hidden;
+    }
+    dialog::backdrop { background: var(--ink); }
+    dialog[open] { display: grid; grid-template-rows: auto 1fr; }
+    .toolbar { display: flex; align-items: center; gap: 24px; padding: 10px 20px; }
+    .toolbar h2 { margin: 0; flex: 1; font-size: 1rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .toolbar h2 small { display: block; font-size: .78rem; font-weight: 400; letter-spacing: .1em; color: #cdb35c; }
+    .tools { display: flex; align-items: center; gap: 22px; }
+    .stage { position: relative; overflow: auto; display: grid; place-items: center; padding: 0 16px 16px; overscroll-behavior: contain; }
+    #viewer-image { display: block; max-width: 100%; max-height: calc(100dvh - 90px); background: var(--paper); cursor: zoom-in; box-shadow: 0 20px 60px -20px #000; }
+    .stage.zoomed { place-items: start; }
+    .stage.zoomed #viewer-image { max-width: none; max-height: none; width: min(1600px, 220%); cursor: zoom-out; margin: 0 auto; }
+    dialog[open] .stage { animation: fade .3s var(--ease); }
+    @keyframes fade { from { opacity: 0; } }
+
+    @media (max-width: 600px) {
+      h1 { font-size: .78rem; letter-spacing: .22em; }
+      h1::before, h1::after { width: 1.2em; }
+      .link { letter-spacing: .1em; font-size: .8rem; }
+      .fan { height: 215px; margin-top: 20px; }
+      .leaf { --width: 128px; transform: translateX(calc(var(--spread) * 18px)) rotate(calc(var(--spread) * 7deg)); }
+      .caption { font-size: .72rem; letter-spacing: .08em; padding: 8px 10px; }
+      .toolbar { flex-wrap: wrap; row-gap: 0; }
+      .toolbar h2 { flex-basis: 100%; }
+      .tools { flex: 1; justify-content: space-between; gap: 12px; }
+      .tools .label { display: none; }
+    }
+
+    ::view-transition-group(front-page) { animation-duration: .5s; animation-timing-function: var(--ease); }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before, .ticker-track, .date .char, .placeholder::after { animation: none; }
+      .card, .leaf { animation-name: fade; }
+      .frame img { filter: none; scale: 1; }
+      .sheet, .sheet:hover, .sheet:focus-visible { transform: rotate(var(--tilt)); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="intro">
+      <h1>Il y a 100 ans aujourd'hui</h1>
+      <p class="date" id="date" aria-live="polite"></p>
+      <nav aria-label="Changer de jour">
+        <button class="link back" id="prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>La veille</button>
+        <button class="link" id="today" hidden>Aujourd'hui</button>
+        <button class="link forward" id="next">Le lendemain<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </nav>
+    </div>
+    <div class="fan" id="fan"></div>
+  </header>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <main>
+    <ul id="front-pages" aria-label="Les unes du jour"></ul>
+    <p id="empty" hidden>Aucun journal numérisé pour ce jour.</p>
+    <noscript><p>Activez JavaScript pour afficher les unes du jour.</p></noscript>
+  </main>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">Les nouvelles du matin, un siècle plus tard</h2>
+    <p>Chaque jour, ce site affiche la première page de six grands quotidiens français parus exactement 100 ans plus tôt : Le Figaro, Le Petit Parisien, Le Petit Journal, Le Matin, L'Humanité et Le Temps. Même date, six regards différents sur l'actualité.</p>
+    <p>Cliquez sur une une pour la lire en grand et zoomer sur les articles. Changez de jour avec les flèches ou les touches ← et → du clavier. Les numérisations proviennent de Gallica, la bibliothèque numérique de la Bibliothèque nationale de France.</p>
+  </section>
+
+  <footer>
+    <span>Source : <a href="https://gallica.bnf.fr">gallica.bnf.fr / Bibliothèque nationale de France</a></span>
+    <span>Fait par <a href="https://github.com/arimet">Anthony Rimet</a> · <a href="https://github.com/arimet/il-y-a-100-ans">Code source</a></span>
+  </footer>
+
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="toolbar">
+      <h2 id="viewer-title"></h2>
+      <div class="tools">
+        <button class="link back" id="viewer-prev" aria-label="Journal précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="label">Précédent</span></button>
+        <button class="link forward" id="viewer-next" aria-label="Journal suivant"><span class="label">Suivant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <a class="link" id="viewer-link" target="_blank" rel="noopener">Gallica<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"/></svg></a>
+        <button class="link" id="viewer-close" aria-label="Fermer"><span class="label">Fermer</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </div>
+    <div class="stage" id="stage"><img id="viewer-image" alt=""></div>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
