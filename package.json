@@ -1,0 +1,15 @@
+{
+  "name": "il-y-a-100-ans",
+  "private": true,
+  "description": "The front pages of six French daily newspapers, published exactly 100 years ago today.",
+  "license": "MIT",
+  "author": "Anthony Rimet (https://github.com/arimet)",
+  "homepage": "https://arimet.github.io/il-y-a-100-ans/",
+  "repository": "github:arimet/il-y-a-100-ans",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build.mjs",
+    "serve": "python3 -m http.server 8000"
+  }
+}
